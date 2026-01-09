@@ -289,6 +289,10 @@ section p {
     padding: 30px 20px;
 }
 
+.login-page.oculto {
+    display: none !important;
+}
+
 .login-container {
     width: 100%;
     max-width: 480px;
@@ -465,3 +469,4 @@ footer {
     }
 
 }
+
