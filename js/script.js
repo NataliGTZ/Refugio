@@ -44,7 +44,7 @@ function registrarUsuario() {
 
     usuarioActual = {
         nombre, email, telefono, direccion, edad,
-        foto: fotoPerfilURL || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        foto: fotoPerfilURL || "https://i.pinimg.com/originals/cd/4b/d9/cd4bd9b0ea2807611ba3a67c331bff0b.jpg"
     };
 
     localStorage.setItem('usuarioHuellitas', JSON.stringify(usuarioActual));
@@ -201,5 +201,6 @@ function crearParticula() {
     }, 25000);
 
 }
+
 
 
