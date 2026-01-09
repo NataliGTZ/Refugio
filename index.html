@@ -14,14 +14,12 @@
                 <h1>Huellitas</h1>
                 <p>Refugio de gatitos y perritos</p>
             </div>
-
             <nav class="nav-izquierda">
                 <button onclick="irASeccion('inicio')">Inicio</button>
                 <button onclick="irASeccion('adopta')">Adopta</button>
                 <button onclick="irASeccion('donar')">Donar</button>
                 <button onclick="irASeccion('contacto')">Contacto</button>
             </nav>
-
             <div class="usuario-boton" id="usuarioBoton" onclick="toggleMenuUsuario(event)">
                 <img id="avatarNav" src="https://i.pinimg.com/originals/cd/4b/d9/cd4bd9b0ea2807611ba3a67c331bff0b.jpg" alt="Avatar">
                 <span id="nombreNav">Iniciar sesión</span>
@@ -34,7 +32,6 @@
             <div class="header-animacion" id="headerAnimacion"></div>
         </div>
     </header>
-
     <main>
         <section id="inicio">
             <h2>Bienvenido a Huellitas</h2>
@@ -44,97 +41,80 @@
             <p>Apoyar a Huellitas no es solo ayudar a un refugio. Es ser parte de una red de empatía, de humanidad, de cambio. Porque cuando un animal encuentra un hogar, no solo se salva una vida… se enriquece otra.</p>
             <p>¿Nos ayudas a seguir dejando huellitas de amor por todo México?</p>
         </section>
-
         <section id="adopta" class="oculto">
             <h2>Animales en adopción</h2>
-
             <div class="mascota">
                 <img src="img/luna.jpeg" alt="Luna">
                 <h3>Luna</h3>
                 <p>Gatita juguetona — 2 meses</p>
                 <button onclick="adoptar('Luna')">Adoptar</button>
             </div>
-
             <div class="mascota">
                 <img src="img/rocky.jpeg" alt="Rocky">
                 <h3>Rocky</h3>
                 <p>Perrito muy fiel — 5 meses</p>
                 <button onclick="adoptar('Rocky')">Adoptar</button>
             </div>
-
             <div class="mascota">
                 <img src="img/pantera.png" alt="Pantera">
                 <h3>Pantera</h3>
                 <p>Gatito muy hablador — 1 año con dos meses</p>
                 <button onclick="adoptar('Pantera')">Adoptar</button>
             </div>
-
             <div class="mascota">
                 <img src="img/capuchino.jpeg" alt="Capuchino">
                 <h3>Capuchino</h3>
                 <p>Perrito muy cariñoso — 1 año 5 meses</p>
                 <button onclick="adoptar('Capuchino')">Adoptar</button>
             </div>
-
             <div class="mascota">
                 <img src="img/Bigotes.png" alt="Bigotes">
                 <h3>Bigotes</h3>
                 <p>Gatito muy amoroso — 5 meses</p>
                 <button onclick="adoptar('Bigotes')">Adoptar</button>
             </div>
-
             <div class="mascota">
                 <img src="img/simon.jpg" alt="Simon">
                 <h3>Simon</h3>
                 <p>Perrito muy tranquilo — 1 año 3 meses</p>
                 <button onclick="adoptar('Simon')">Adoptar</button>
             </div>
-
             <h3>Animales adoptados:</h3>
             <p id="counter">0</p>
         </section>
-
         <section id="donar" class="oculto">
             <h2>¿Cómo ayudar?</h2>
             <p>Puedes donar comida, medicinas o apoyo económico para el cuidado de los animalitos.</p>
             <button onclick="iniciarFormulario()">Llenar formulario</button>
-
             <div id="progressBar">
                 <div id="progressFill">0%</div>
             </div>
         </section>
-
         <section id="contacto" class="oculto">
             <h2>Contacto</h2>
             <p>Dirección: <a href="https://www.google.com/maps?q=Calle+Esperanza+123,+Ciudad+de+México" target="_blank">Calle Esperanza #123, Ciudad de México</a></p>
             <p>Teléfono: <a href="tel:+525551234567">+52 555 123 4567</a></p>
             <p>Correo: <a href="mailto:contacto@huellitas.mx">contacto@huellitas.mx</a></p>
         </section>
-
-        <section id="login" class="oculto">
+        <section id="login" class="oculto login-page">
             <div class="login-container">
                 <div class="login-card">
                     <h2>Iniciar sesión</h2>
                     <p class="subtitle">Ingresa a tu cuenta para adoptar o donar</p>
-
                     <div class="login-form">
                         <div class="input-group">
                             <label for="emailLogin">Correo electrónico</label>
                             <input type="email" id="emailLogin" placeholder="tu@correo.com">
                         </div>
-
                         <div class="input-group">
                             <label for="passwordLogin">Contraseña</label>
                             <input type="password" id="passwordLogin" placeholder="••••••••">
                         </div>
-
                         <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-
                         <button type="button" onclick="iniciarSesionLocal()" class="btn-login">
                             Iniciar sesión
                         </button>
                     </div>
-
                     <div class="register-link">
                         <p>¿Aún no tienes cuenta?</p>
                         <button onclick="irASeccion('registro')" class="btn-register">
@@ -144,50 +124,41 @@
                 </div>
             </div>
         </section>
-
-        <section id="registro" class="oculto">
+        <section id="registro" class="oculto login-page">
             <div class="login-container">
                 <div class="login-card">
                     <h2>Crear cuenta</h2>
                     <p class="subtitle">Regístrate para comenzar a ayudar</p>
-
                     <div class="login-form">
                         <div class="perfil-preview">
                             <img id="previewFoto" src="https://i.pinimg.com/originals/cd/4b/d9/cd4bd9b0ea2807611ba3a67c331bff0b.jpg" alt="Preview">
                             <label for="fotoUsuario" class="btn-subir-foto">Subir foto de perfil</label>
                             <input type="file" id="fotoUsuario" accept="image/*">
                         </div>
-
                         <div class="input-group">
                             <label for="nombreRegistro">Nombre completo</label>
                             <input type="text" id="nombreRegistro" placeholder="" required>
                         </div>
-
                         <div class="input-group">
                             <label for="emailRegistro">Correo electrónico</label>
                             <input type="email" id="emailRegistro" placeholder="tu@correo.com" required>
                         </div>
-
                         <div class="input-group">
                             <label for="telRegistro">Teléfono (opcional)</label>
                             <input type="tel" id="telRegistro" placeholder="+52 5551 2367">
                         </div>
-
                         <div class="input-group">
                             <label for="direccionRegistro">Domicilio completo</label>
                             <input type="text" id="direccionRegistro" placeholder="Calle, número, colonia, CDMX" required>
                         </div>
-
                         <div class="input-group">
                             <label for="edadRegistro">Edad</label>
                             <input type="number" id="edadRegistro" min="18" placeholder="18" required>
                         </div>
-
                         <button type="button" onclick="registrarUsuario()" class="btn-login">
                             Crear cuenta
                         </button>
                     </div>
-
                     <div class="register-link">
                         <p>¿Ya tienes cuenta?</p>
                         <button onclick="irASeccion('login')" class="btn-register">
@@ -198,7 +169,6 @@
             </div>
         </section>
     </main>
-
     <footer>
         <p>© 2025 Huellitas — derechos reservados</p>
     </footer>
@@ -207,8 +177,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
-
-
