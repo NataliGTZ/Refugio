@@ -21,8 +21,8 @@ header {
     animation: gradientMove 12s ease infinite;
     color: #4a2c2a;
     padding: 20px 40px;
+    overflow: visible !important;
     position: relative;
-    overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
@@ -40,6 +40,7 @@ header {
     margin: 0 auto;
     flex-wrap: wrap;
     gap: 20px;
+    overflow: visible !important;
     position: relative;
     z-index: 2;
 }
@@ -142,7 +143,7 @@ header {
     box-shadow: 0 12px 35px rgba(0,0,0,0.2);
     padding: 20px;
     min-width: 240px;
-    z-index: 1000;
+    z-index: 1000 !important;
     text-align: center;
 }
 
@@ -439,9 +440,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .header-contenido {
-        flex-direction: column;
-        text-align: center;
+    .menu-desplegable {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     }
     
     .nav-izquierda {
@@ -460,4 +463,5 @@ footer {
         width: 90%;
         max-width: 300px;
     }
+
 }
