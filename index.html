@@ -39,37 +39,172 @@
     <main>
         <section id="inicio">
             <h2>Bienvenido a Huellitas</h2>
-            <p>Somos un refugio que rescata, cuida y busca hogares amorosos para nuestros amigos peluditos. En el corazón de la Ciudad de México, "Huellitas" nace como un santuario para aquellos que han sido olvidados, maltratados o abandonados...</p>
+            <p>Somos un refugio que rescata, cuida y busca hogares amorosos para nuestros amigos peluditos. En el corazón de la Ciudad de México, "Huellitas" nace como un santuario para aquellos que han sido olvidados, maltratados o abandonados. Cada ladrido apagado, cada mirada triste, cada cuerpo tembloroso que llega a nuestras puertas cuenta una historia de adversidad que no debería existir.</p>
+            <p>Muchos de nuestros peluditos han vivido el frío de la calle, el hambre que duele, el miedo constante. Pero aquí, en Huellitas, encuentran algo que jamás deberían haber perdido: amor, cuidado y una segunda oportunidad.</p>
+            <p>Nuestro propósito es claro: rescatar, rehabilitar y reubicar. Pero más allá de eso, buscamos transformar vidas —las de ellos y las de quienes deciden abrir su corazón. Cada adopción es un acto de esperanza. Cada donación, un paso hacia un mundo más compasivo.</p>
+            <p>Apoyar a Huellitas no es solo ayudar a un refugio. Es ser parte de una red de empatía, de humanidad, de cambio. Porque cuando un animal encuentra un hogar, no solo se salva una vida… se enriquece otra.</p>
+            <p>¿Nos ayudas a seguir dejando huellitas de amor por todo México?</p>
         </section>
 
         <section id="adopta" class="oculto">
             <h2>Animales en adopción</h2>
+
+            <div class="mascota">
+                <img src="img/luna.jpeg" alt="Luna">
+                <h3>Luna</h3>
+                <p>Gatita juguetona — 2 meses</p>
+                <button onclick="adoptar('Luna')">Adoptar</button>
+            </div>
+
+            <div class="mascota">
+                <img src="img/rocky.jpeg" alt="Rocky">
+                <h3>Rocky</h3>
+                <p>Perrito muy fiel — 5 meses</p>
+                <button onclick="adoptar('Rocky')">Adoptar</button>
+            </div>
+
+            <div class="mascota">
+                <img src="img/pantera.png" alt="Pantera">
+                <h3>Pantera</h3>
+                <p>Gatito muy hablador — 1 año con dos meses</p>
+                <button onclick="adoptar('Pantera')">Adoptar</button>
+            </div>
+
+            <div class="mascota">
+                <img src="img/capuchino.jpeg" alt="Capuchino">
+                <h3>Capuchino</h3>
+                <p>Perrito muy cariñoso — 1 año 5 meses</p>
+                <button onclick="adoptar('Capuchino')">Adoptar</button>
+            </div>
+
+            <div class="mascota">
+                <img src="img/Bigotes.png" alt="Bigotes">
+                <h3>Bigotes</h3>
+                <p>Gatito muy amoroso — 5 meses</p>
+                <button onclick="adoptar('Bigotes')">Adoptar</button>
+            </div>
+
+            <div class="mascota">
+                <img src="img/simon.jpg" alt="Simon">
+                <h3>Simon</h3>
+                <p>Perrito muy tranquilo — 1 año 3 meses</p>
+                <button onclick="adoptar('Simon')">Adoptar</button>
+            </div>
+
             <h3>Animales adoptados:</h3>
             <p id="counter">0</p>
         </section>
 
         <section id="donar" class="oculto">
             <h2>¿Cómo ayudar?</h2>
+            <p>Puedes donar comida, medicinas o apoyo económico para el cuidado de los animalitos.</p>
+            <button onclick="iniciarFormulario()">Llenar formulario</button>
+
+            <div id="progressBar">
+                <div id="progressFill">0%</div>
+            </div>
         </section>
 
         <section id="contacto" class="oculto">
             <h2>Contacto</h2>
+            <p>Dirección: <a href="https://www.google.com/maps?q=Calle+Esperanza+123,+Ciudad+de+México" target="_blank">Calle Esperanza #123, Ciudad de México</a></p>
+            <p>Teléfono: <a href="tel:+525551234567">+52 555 123 4567</a></p>
+            <p>Correo: <a href="mailto:contacto@huellitas.mx">contacto@huellitas.mx</a></p>
         </section>
 
         <section id="login" class="oculto login-page">
+            <div class="login-container">
+                <div class="login-card">
+                    <h2>Iniciar sesión en Huellitas 🐾</h2>
+                    <p class="subtitle">Ingresa a tu cuenta para adoptar o donar</p>
+
+                    <div class="login-form">
+                        <div class="input-group">
+                            <label for="emailLogin">Correo electrónico</label>
+                            <input type="email" id="emailLogin" placeholder="tu@correo.com">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="passwordLogin">Contraseña</label>
+                            <input type="password" id="passwordLogin" placeholder="••••••••">
+                        </div>
+
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+                        <button type="button" onclick="iniciarSesionLocal()" class="btn-login">
+                            Iniciar sesión
+                        </button>
+                    </div>
+
+                    <div class="register-link">
+                        <p>¿Aún no tienes cuenta?</p>
+                        <button onclick="irASeccion('registro')" class="btn-register">
+                            Crear cuenta nueva
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="registro" class="oculto login-page">
+            <div class="login-container">
+                <div class="login-card">
+                    <h2>Crear cuenta en Huellitas 🐾</h2>
+                    <p class="subtitle">Regístrate para comenzar a ayudar</p>
+
+                    <div class="login-form">
+                        <div class="perfil-preview">
+                            <img id="previewFoto" src="https://via.placeholder.com/120?text=Tu+Foto" alt="Preview">
+                            <label for="fotoUsuario" class="btn-subir-foto">Subir foto de perfil</label>
+                            <input type="file" id="fotoUsuario" accept="image/*">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="nombreRegistro">Nombre completo</label>
+                            <input type="text" id="nombreRegistro" placeholder="Natali Gutiérrez" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="emailRegistro">Correo electrónico</label>
+                            <input type="email" id="emailRegistro" placeholder="tu@correo.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="telRegistro">Teléfono (opcional)</label>
+                            <input type="tel" id="telRegistro" placeholder="+52 555 123 4567">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="direccionRegistro">Domicilio completo</label>
+                            <input type="text" id="direccionRegistro" placeholder="Calle, número, colonia, CDMX" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="edadRegistro">Edad</label>
+                            <input type="number" id="edadRegistro" min="18" placeholder="18" required>
+                        </div>
+
+                        <button type="button" onclick="registrarUsuario()" class="btn-login">
+                            Crear cuenta
+                        </button>
+                    </div>
+
+                    <div class="register-link">
+                        <p>¿Ya tienes cuenta?</p>
+                        <button onclick="irASeccion('login')" class="btn-register">
+                            Iniciar sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>© 2025 Huellitas — derechos reservados</p>
     </footer>
-
     <audio id="sonidoMaullido" src="audio/mau.mp3" preload="auto"></audio>
     <audio id="sonidoLadrido" src="audio/guau.mp3" preload="auto"></audio>
-
     <script src="js/script.js"></script>
 </body>
 </html>
