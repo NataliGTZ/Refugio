@@ -4,6 +4,9 @@ let adopcionesTotales = 0;
 
 // nav y menu
 function irASeccion(id) {
+    if ((id === 'login' || id === 'registro') && usuarioActual) {
+        id = 'inicio';
+    }
     document.querySelectorAll('main > section').forEach(sec => sec.classList.add('oculto'));
     const target = document.getElementById(id);
     if (target) {
@@ -64,12 +67,15 @@ function cargarUsuario() {
 
 function actualizarAvatarYMenu() {
     if (usuarioActual) {
-        document.getElementById('avatarNav').src = usuarioActual.foto;
+        document.getElementById('avatarNav').src = usuarioActual.foto || "https://via.placeholder.com/40?text=🐾";
         document.getElementById('nombreNav').textContent = usuarioActual.nombre.split(' ')[0];
-        document.getElementById('nombreMenu').textContent = usuarioActual.nombre;
+        document.getElementById('btnEditarPerfil').style.display = "block";
+        irASeccion('inicio'); 
     } else {
-        document.getElementById('avatarNav').src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+        document.getElementById('btnEditarPerfil').style.display = "none";
+        document.getElementById('avatarNav').src = "https://via.placeholder.com/40?text=🐾";
         document.getElementById('nombreNav').textContent = "Iniciar sesión";
+        document.getElementById('nombreMenu').textContent = "Invitado";
     }
 }
 
@@ -193,4 +199,5 @@ function crearParticula() {
     setTimeout(() => {
         if (particle.parentNode) particle.remove();
     }, 25000);
+
 }
