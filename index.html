@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellitas — Refugio de Gatitos y Perritos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-contenido">
+            <div class="titulo">
+                <h1>Huellitas</h1>
+                <p>Refugio de gatitos y perritos</p>
+            </div>
+
+            <nav class="nav-izquierda">
+                <button onclick="irASeccion('inicio')">Inicio</button>
+                <button onclick="irASeccion('adopta')">Adopta</button>
+                <button onclick="irASeccion('donar')">Donar</button>
+                <button onclick="irASeccion('contacto')">Contacto</button>
+            </nav>
+
+            <div class="usuario-boton" id="usuarioBoton" onclick="toggleMenuUsuario(event)">
+                <img id="avatarNav" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Avatar">
+                <span id="nombreNav">Iniciar sesión</span>
+                <div class="menu-desplegable oculto" id="menuUsuario">
+                    <p id="nombreMenu">Mi cuenta</p>
+                    <button onclick="irASeccion('login')">Editar perfil</button>
+                    <button onclick="cerrarSesion()">Cerrar sesión</button>
+                </div>
+            </div>
+
+            <div class="header-animacion" id="headerAnimacion"></div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="login" class="oculto login-page">
+            <div class="login-container">
+                <div class="login-card">
+                    <h2>Iniciar sesión</h2>
+                    <p class="subtitle">Ingresa a tu cuenta para adoptar o donar a nuestros amiguitos peludos</p>
+
+                    <div class="login-form">
+                        <div class="input-group">
+                            <label for="emailLogin">Correo electrónico</label>
+                            <input type="email" id="emailLogin" placeholder="tu@correo.com">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="passwordLogin">Contraseña</label>
+                            <input type="password" id="passwordLogin" placeholder="••••••••">
+                        </div>
+
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+                        <button type="button" onclick="iniciarSesionLocal()" class="btn-login">
+                            Iniciar sesión
+                        </button>
+                    </div>
+
+                    <div class="register-link">
+                        <p>¿Aún no tienes cuenta?</p>
+                        <button onclick="irASeccion('registro')" class="btn-register">
+                            Crear cuenta nueva
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="registro" class="oculto login-page">
+            <div class="login-container">
+                <div class="login-card">
+                    <h2>Crear cuenta</h2>
+                    <p class="subtitle">Regístrate para comenzar a ayudar</p>
+
+                    <div class="login-form">
+                        <div class="perfil-preview">
+                            <img id="previewFoto" src="https://via.placeholder.com/120?text=Tu+Foto" alt="Preview">
+                            <label for="fotoUsuario" class="btn-subir-foto">Subir foto</label>
+                            <input type="file" id="fotoUsuario" accept="image/*">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="nombreRegistro">Nombre completo</label>
+                            <input type="text" id="nombreRegistro" placeholder="..." required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="emailRegistro">Correo electrónico</label>
+                            <input type="email" id="emailRegistro" placeholder="tu@correo.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="telRegistro">Teléfono (opcional)</label>
+                            <input type="tel" id="telRegistro" placeholder="+52 1223 2323">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="direccionRegistro">Domicilio completo</label>
+                            <input type="text" id="direccionRegistro" placeholder="Calle, número, colonia, CDMX" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="edadRegistro">Edad</label>
+                            <input type="number" id="edadRegistro" min="18" placeholder="18" required>
+                        </div>
+
+                        <button type="button" onclick="registrarUsuario()" class="btn-login">
+                            Crear cuenta
+                        </button>
+                    </div>
+
+                    <div class="register-link">
+                        <p>¿Ya tienes cuenta?</p>
+                        <button onclick="irASeccion('login')" class="btn-register">
+                            Iniciar sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Huellitas — derechos reservados</p>
+    </footer>
+
+    <audio id="sonidoMaullido" src="audio/mau.mp3" preload="auto"></audio>
+    <audio id="sonidoLadrido" src="audio/guau.mp3" preload="auto"></audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
