@@ -67,15 +67,15 @@ function cargarUsuario() {
 
 function actualizarAvatarYMenu() {
     if (usuarioActual) {
-        document.getElementById('avatarNav').src = usuarioActual.foto || "https://via.placeholder.com/40?text=🐾";
+        document.getElementById('avatarNav').src = usuarioActual.foto || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
         document.getElementById('nombreNav').textContent = usuarioActual.nombre.split(' ')[0];
-        document.getElementById('btnEditarPerfil').style.display = "block";
-        irASeccion('inicio'); 
+        document.getElementById('nombreMenu').textContent = usuarioActual.nombre;
+        document.getElementById('btnEditarPerfil').style.display = "block"; 
     } else {
-        document.getElementById('btnEditarPerfil').style.display = "none";
-        document.getElementById('avatarNav').src = "https://via.placeholder.com/40?text=🐾";
+        document.getElementById('avatarNav').src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
         document.getElementById('nombreNav').textContent = "Iniciar sesión";
         document.getElementById('nombreMenu').textContent = "Invitado";
+        document.getElementById('btnEditarPerfil').style.display = "none"; 
     }
 }
 
@@ -201,3 +201,4 @@ function crearParticula() {
     }, 25000);
 
 }
+
